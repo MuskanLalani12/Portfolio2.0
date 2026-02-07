@@ -165,4 +165,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Magnetic Cursor Effect ---
+    const magneticElements = document.querySelectorAll('.magnetic');
+
+    if (window.matchMedia('(pointer: fine)').matches) {
+        magneticElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Strength of the magnetic effect (lower = stronger pull/more movement)
+                // Limiting movement to max 12px for subtlety
+                const xMove = Math.min(Math.max(x * 0.4, -12), 12);
+                const yMove = Math.min(Math.max(y * 0.4, -12), 12);
+
+                el.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    }
 });
