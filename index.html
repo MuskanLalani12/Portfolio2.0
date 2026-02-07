@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Lalani | Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of a passionate Full Stack Developer specializing in modern web applications.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header id="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Muskan<span class="accent">Lalani</span>.</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="bounce-in">Full Stack Developer</h1>
+            <p class="hero-tagline fade-in">Aspiring Full Stack Developer passionate about building scalable web
+                applications.</p>
+            <div class="cta-buttons fade-in">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a dedicated professional turning my passion for technology into a career in Full Stack
+                        Development. With a strong foundation in problem-solving and a continuous learning mindset, I
+                        enjoy building efficient and user-friendly web solutions.
+                    </p>
+                    <p>
+                        My journey represents a commitment to growth and excellence. I focus on writing clean,
+                        maintainable code and am always eager to adopt new technologies that enhance project scalability
+                        and performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                    </ul>
+                </div>
+                <!-- Backend -->
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Express.js (Learning)</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <!-- Tools -->
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>Chrome DevTools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project Placeholder 1 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A personal portfolio site built with HTML, CSS, and JavaScript. Fully responsive and
+                            accessible.</p>
+                        <span class="badge">Coming Soon</span>
+                    </div>
+                </div>
+                <!-- Project Placeholder 2 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>E-commerce Dashboard</h3>
+                        <p>A dashboard interface for managing products and orders, featuring data visualization.</p>
+                        <span class="badge">Coming Soon</span>
+                    </div>
+                </div>
+                <!-- Project Placeholder 3 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Task Manager App</h3>
+                        <p>A productivity application to manage daily tasks with local storage integration.</p>
+                        <span class="badge">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                        <small class="error-msg" id="name-error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                        <small class="error-msg" id="email-error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                        <small class="error-msg" id="message-error"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <p><strong>Email:</strong> contact@muskanlalani.dev</p>
+                    <p><strong>Location:</strong> Remote / Worldwide</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="GitHub">GitHub</a>
+                        <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" target="_blank" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Muskan Lalani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
