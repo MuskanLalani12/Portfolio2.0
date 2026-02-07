@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Sticky Navbar ---
     const header = document.querySelector('header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Offset for fixed header
@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Reset error messages
             document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
             formStatus.textContent = '';
-            
+
             let isValid = true;
 
             // Validate Name
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formStatus.style.color = '#764abc'; // Accent color
                 formStatus.textContent = 'Thank you! Your message has been sent (simulation).';
                 form.reset();
-                
+
                 // Clear success message after 5 seconds
                 setTimeout(() => {
                     formStatus.textContent = '';
@@ -112,5 +112,57 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simple regex for basic email validation
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
+    }
+
+    // --- Custom Cursor ---
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
+
+    // Only activate if elements exist and device has fine pointer
+    if (cursorDot && cursorOutline && window.matchMedia('(pointer: fine)').matches) {
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let outlineX = 0;
+        let outlineY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Dot follows instantly
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+
+            // Show cursor if it was hidden (optional safety)
+            cursorDot.style.opacity = 1;
+            cursorOutline.style.opacity = 1;
+        });
+
+        // Smooth animation loop for outline
+        const animateCursor = () => {
+            // Lerp (Linear Interpolation) for smooth trailing
+            // current = current + (target - current) * ease
+            outlineX += (mouseX - outlineX) * 0.15; // 0.15 is the easing factor
+            outlineY += (mouseY - outlineY) * 0.15;
+
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+
+            requestAnimationFrame(animateCursor);
+        };
+        animateCursor();
+
+        // Hover Effect Logic
+        const interactables = document.querySelectorAll('a, button, input, textarea, label, .skill-card, .project-card');
+
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+            });
+        });
     }
 });

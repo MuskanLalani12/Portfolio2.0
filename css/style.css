@@ -511,3 +511,108 @@ header.scrolled {
         /* Reset margin since we are using gap */
     }
 }
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(136, 136, 136, 0.5);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+body.hovering .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: var(--accent-hover);
+}
+
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    border-color: var(--accent-color);
+    background-color: rgba(10, 132, 255, 0.1);
+}
+
+@media (pointer: fine) {
+    body, a, button, input, textarea, label {
+        cursor: none;
+    }
+}
+
+@media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+    body, a, button, input, textarea, label {
+        cursor: auto;
+    }
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(136, 136, 136, 0.5);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+body.hovering .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: var(--accent-hover);
+}
+
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    border-color: var(--accent-color);
+    background-color: rgba(10, 132, 255, 0.1);
+}
+
+@media (pointer: fine) {
+    body, a, button, input, textarea, label {
+        cursor: none;
+    }
+}
+
+@media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+    body, a, button, input, textarea, label {
+        cursor: auto;
+    }
+}
